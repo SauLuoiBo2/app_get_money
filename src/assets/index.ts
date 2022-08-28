@@ -1,0 +1,1 @@
+import SvgComponent from "./svgs/glass-background";export { SvgComponent };

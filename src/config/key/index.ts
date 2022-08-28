@@ -1,0 +1,1 @@
+export const KEY = {    PERSIST_STORE: "persist_store",};
