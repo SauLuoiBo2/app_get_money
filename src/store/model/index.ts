@@ -1,5 +1,4 @@
 import { AuthStore, ThemeStore } from "../slices";
-import { HistoryStore } from "../slices/auth/history-slice";
 
 // ZustandStore
 
@@ -14,7 +13,7 @@ export type GetZustandType = () => ZustandStore;
 
 // PersistStore
 
-export interface PersistStore extends ThemeStore, AuthStore, HistoryStore {}
+export interface PersistStore extends ThemeStore, AuthStore {}
 
 export type SetPersistType = (
     partial: ZustandStore | Partial<PersistStore> | ((state: PersistStore) => PersistStore | Partial<PersistStore>),

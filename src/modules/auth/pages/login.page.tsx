@@ -2,8 +2,8 @@ import { Button, Stack, SxProps, Theme, Typography } from "@mui/material";
 import { red } from "@mui/material/colors";
 import React from "react";
 
-import { ResultEnum } from "@/store/slices/auth/history-slice";
-import { usePersistStore } from "@/store/useBearStore";
+import { useGameStore } from "@/store/useGameStore";
+import { ResultPointEnum } from "@/utils";
 
 export interface LoginPageProps {}
 
@@ -15,10 +15,10 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
         color: red[400],
     };
 
-    const { getStrateNext, addNewTurn, addResult, subResult, getLastResult } = usePersistStore();
+    const { current_point_list, create_new_point, remove_last_point } = useGameStore();
 
-    console.log(getLastResult());
-    console.log(getStrateNext());
+    console.log(current_point_list);
+
     return (
         <Stack mx={2}>
             <Typography sx={hi} variant='caption'>
@@ -26,18 +26,26 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
             </Typography>
 
             <Stack>
-                <Button variant='containedSizeLarge' size='large' onClick={addNewTurn}>
+                {/* <Button variant='containedSizeLarge' size='large' onClick={addNewTurn}>
                     Add turn new
-                </Button>
+                </Button> */}
 
-                <Button variant='containedSizeLarge' size='large' onClick={() => addResult(ResultEnum.TAI)}>
+                <Button
+                    variant='containedSizeLarge'
+                    size='large'
+                    onClick={() => create_new_point(ResultPointEnum.BLACK)}
+                >
                     Add TAI
                 </Button>
 
-                <Button variant='containedSizeLarge' size='large' onClick={() => addResult(ResultEnum.XIU)}>
+                <Button
+                    variant='containedSizeLarge'
+                    size='large'
+                    onClick={() => create_new_point(ResultPointEnum.WHITE)}
+                >
                     Add XIU
                 </Button>
-                <Button variant='containedSizeLarge' size='large' onClick={subResult}>
+                <Button variant='containedSizeLarge' size='large' onClick={remove_last_point}>
                     CLEAR RESULT
                 </Button>
             </Stack>

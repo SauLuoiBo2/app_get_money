@@ -5,7 +5,6 @@ import { KEY } from "@/config";
 
 import { PersistStore, ZustandStore } from "./model";
 import { authSlice, themeSlice } from "./slices";
-import { histoySlice } from "./slices/auth/history-slice";
 
 export const useBearStore = create<ZustandStore>();
 
@@ -28,7 +27,6 @@ export const usePersistStore = create<PersistStore>()(
         (set, get) => ({
             ...themeSlice(set, get),
             ...authSlice(set, get),
-            ...histoySlice(set, get),
         }),
         {
             name: KEY.PERSIST_STORE,
