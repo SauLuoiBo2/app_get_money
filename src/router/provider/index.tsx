@@ -14,7 +14,7 @@ const Router = memo(() => {
         {
             path: PATH.BASE_PATH.DIRT_NAME,
             element: <SplashAppLayout />,
-            children: [appRoute(true), authRoute(true), errorRoute()],
+            children: [appRoute(true), authRoute(false), errorRoute()],
         },
         {
             path: PATH.BASE_PATH.ALL,

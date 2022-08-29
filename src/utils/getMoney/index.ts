@@ -27,8 +27,9 @@ export interface PointProps {
     is_win: IsWinPointEnum;
 }
 
-const turnCheck = 7;
+const turnCheck = 9;
 const turn = turnCheck * 3;
+const turnEqua = Math.floor(turnCheck / 2);
 
 const initialPoint = {
     cal_deviate_next: DeviatePointEnum.WAITTING,
@@ -50,9 +51,10 @@ export function calDeviateNext(list: PointProps[]) {
                 count_equa++;
             }
         }
+        console.log("count_equa", count_equa, turnEqua);
     }
 
-    if (count_equa > 2) {
+    if (count_equa > turnEqua) {
         return DeviatePointEnum.OTHER;
     } else {
         return DeviatePointEnum.EQUA;

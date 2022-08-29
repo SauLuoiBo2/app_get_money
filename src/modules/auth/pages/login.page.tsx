@@ -15,7 +15,14 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
         color: red[400],
     };
 
-    const { save_current_to_history_list, create_new_point, remove_last_point, clear_current_list } = useGameStore();
+    const {
+        save_current_to_history_list,
+        create_new_point,
+        remove_last_point,
+        clear_current_list,
+        current_point_list,
+    } = useGameStore();
+    console.log("result", current_point_list);
 
     return (
         <Stack mx={2}>
