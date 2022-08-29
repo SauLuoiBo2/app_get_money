@@ -15,21 +15,14 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
         color: red[400],
     };
 
-    const { current_point_list, create_new_point, remove_last_point } = useGameStore();
-
-    console.log(current_point_list);
+    const { save_current_to_history_list, create_new_point, remove_last_point, clear_current_list } = useGameStore();
 
     return (
         <Stack mx={2}>
             <Typography sx={hi} variant='caption'>
                 Login page
             </Typography>
-
             <Stack>
-                {/* <Button variant='containedSizeLarge' size='large' onClick={addNewTurn}>
-                    Add turn new
-                </Button> */}
-
                 <Button
                     variant='containedSizeLarge'
                     size='large'
@@ -47,6 +40,13 @@ export const LoginPage: React.FC<LoginPageProps> = () => {
                 </Button>
                 <Button variant='containedSizeLarge' size='large' onClick={remove_last_point}>
                     CLEAR RESULT
+                </Button>
+                <Button variant='containedSizeLarge' size='large' onClick={clear_current_list}>
+                    CLEAT CURRENT
+                </Button>
+
+                <Button variant='containedSizeLarge' size='large' onClick={save_current_to_history_list}>
+                    SAVE TO HISTORY
                 </Button>
             </Stack>
         </Stack>

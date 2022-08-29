@@ -1,4 +1,4 @@
-import { blue, red } from "@mui/material/colors";
+import { blue, grey, red } from "@mui/material/colors";
 
 export const light_colors = {
     background: {
@@ -13,7 +13,7 @@ export const light_colors = {
         primary: "#fcf0f1",
         secondary: "red",
         disabled: "#9e9e9e",
-        main: "#f5f5f5",
+        main: grey[900],
     },
     primary: {
         main: red[500],
